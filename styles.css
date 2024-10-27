@@ -19,3 +19,27 @@ h1 {
   font-size: 16px;
   border-radius: 4px;
 }
+form#success-form div {
+  margin-bottom: 15px;
+}
+label {
+  font-weight: bold;
+}
+/* Styling required indicator */
+.required-indicator {
+  color: red;
+  margin-left: 4px;
+}
+/* Styling for validation error message */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  display: none;
+}
+/* Basic styling without accessibility cues */
+form#failure-form div {
+  margin-bottom: 15px;
+}
+label {
+  font-weight: bold;
+}

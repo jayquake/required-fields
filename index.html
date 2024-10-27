@@ -13,7 +13,7 @@
     <form id="success-form">
       <h3>Example 1: Required Name Field Group</h3>
       <div id="success-rule-1">
-        <label for="name">Name</label>
+        <label for="name">Name<span class="required-indicator">*</span></label>
         <input
           type="text"
           id="name"
@@ -21,13 +21,14 @@
           required
           placeholder="Enter your name"
         />
+        <div class="error-message" id="name-error">Name is required.</div>
       </div>
-
-      <br />
 
       <h3>Example 2: Required Email Field Group</h3>
       <div id="success-rule-2">
-        <label for="email">Email</label>
+        <label for="email"
+          >Email<span class="required-indicator">*</span></label
+        >
         <input
           type="email"
           id="email"
@@ -35,13 +36,16 @@
           required
           placeholder="Enter your email"
         />
+        <div class="error-message" id="email-error">
+          Valid email is required.
+        </div>
       </div>
-
-      <br />
 
       <h3>Example 3: Required Phone Number Field Group</h3>
       <div id="success-rule-3">
-        <label for="phone">Phone Number</label>
+        <label for="phone"
+          >Phone Number<span class="required-indicator">*</span></label
+        >
         <input
           type="tel"
           id="phone"
@@ -49,13 +53,16 @@
           required
           placeholder="Enter your phone number"
         />
+        <div class="error-message" id="phone-error">
+          Phone number is required.
+        </div>
       </div>
-
-      <br />
 
       <h3>Example 4: Required Password Field Group</h3>
       <div id="success-rule-4">
-        <label for="password">Password</label>
+        <label for="password"
+          >Password<span class="required-indicator">*</span></label
+        >
         <input
           type="password"
           id="password"
@@ -63,13 +70,16 @@
           required
           placeholder="Enter your password"
         />
+        <div class="error-message" id="password-error">
+          Password is required.
+        </div>
       </div>
-
-      <br />
 
       <h3>Example 5: Required Address Field Group</h3>
       <div id="success-rule-5">
-        <label for="address">Address</label>
+        <label for="address"
+          >Address<span class="required-indicator">*</span></label
+        >
         <input
           type="text"
           id="address"
@@ -77,56 +87,56 @@
           required
           placeholder="Enter your address"
         />
+        <div class="error-message" id="address-error">Address is required.</div>
       </div>
-
-      <br />
 
       <h3>Example 6: Required Date of Birth Field Group</h3>
       <div id="success-rule-6">
-        <label for="dob">Date of Birth</label>
+        <label for="dob"
+          >Date of Birth<span class="required-indicator">*</span></label
+        >
         <input type="date" id="dob" aria-required="true" required />
+        <div class="error-message" id="dob-error">
+          Date of birth is required.
+        </div>
       </div>
+
+      <button type="submit">Submit</button>
     </form>
+
     <hr />
 
     <h2>Failures</h2>
     <form id="failure-form">
       <h3>
-        Failure Example 1: Name Field Group Without aria-required or required
-        attribute
+        Failure Example 1: Name Field Group Without Accessibility Attributes
       </h3>
       <div id="failure-rule-1">
         <label for="name-failure">Name</label>
-
         <input
           type="text"
-          required
           id="name-failure"
+          required
           placeholder="Enter your name"
         />
       </div>
 
-      <br />
-
       <h3>
-        Failure Example 2: Email Field Group Without aria-required or required
-        attribute
+        Failure Example 2: Email Field Group Without Accessibility Attributes
       </h3>
       <div id="failure-rule-2">
         <label for="email-failure">Email</label>
         <input
           type="email"
-          required
           id="email-failure"
+          required
           placeholder="Enter your email"
         />
       </div>
 
-      <br />
-
       <h3>
-        Failure Example 3: Phone Number Field Group Without aria-required or
-        required attribute
+        Failure Example 3: Phone Number Field Group Without Accessibility
+        Attributes
       </h3>
       <div id="failure-rule-3">
         <label for="phone-failure">Phone Number</label>
@@ -138,48 +148,42 @@
         />
       </div>
 
-      <br />
-
       <h3>
-        Failure Example 4: Password Field Group Without aria-required or
-        required attribute
+        Failure Example 4: Password Field Group Without Accessibility Attributes
       </h3>
       <div id="failure-rule-4">
         <label for="password-failure">Password</label>
         <input
           type="password"
-          required
           id="password-failure"
+          required
           placeholder="Enter your password"
         />
       </div>
 
-      <br />
-
       <h3>
-        Failure Example 5: Address Field Group Without aria-required or required
-        attribute
+        Failure Example 5: Address Field Group Without Accessibility Attributes
       </h3>
       <div id="failure-rule-5">
         <label for="address-failure">Address</label>
         <input
           type="text"
-          required
           id="address-failure"
+          required
           placeholder="Enter your address"
         />
       </div>
 
-      <br />
-
       <h3>
-        Failure Example 6: Date of Birth Field Group Without aria-required or
-        required attribute
+        Failure Example 6: Date of Birth Field Group Without Accessibility
+        Attributes
       </h3>
       <div id="failure-rule-6">
         <label for="dob-failure">Date of Birth</label>
-        <input type="date" required id="dob-failure" />
+        <input type="date" id="dob-failure" required />
       </div>
+
+      <button type="submit">Submit</button>
     </form>
     <hr />
     <h2>Sentry.io Phone</h2>
@@ -206,5 +210,61 @@
         </div>
       </div>
     </main>
+    <script>
+      // JavaScript for client-side validation
+      document
+        .getElementById("success-form")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
+
+          // List of required fields with custom validation messages
+          const fields = [
+            { id: "name", errorId: "name-error", message: "Name is required." },
+            {
+              id: "email",
+              errorId: "email-error",
+              message: "Valid email is required.",
+            },
+            {
+              id: "phone",
+              errorId: "phone-error",
+              message: "Phone number is required.",
+            },
+            {
+              id: "password",
+              errorId: "password-error",
+              message: "Password is required.",
+            },
+            {
+              id: "address",
+              errorId: "address-error",
+              message: "Address is required.",
+            },
+            {
+              id: "dob",
+              errorId: "dob-error",
+              message: "Date of birth is required.",
+            },
+          ];
+
+          // Loop through each field to validate
+          fields.forEach((field) => {
+            const input = document.getElementById(field.id);
+            const errorMessage = document.getElementById(field.errorId);
+
+            if (!input.checkValidity()) {
+              errorMessage.style.display = "block";
+              isValid = false;
+            } else {
+              errorMessage.style.display = "none";
+            }
+          });
+
+          // Prevent form submission if any field is invalid
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
   </body>
 </html>
