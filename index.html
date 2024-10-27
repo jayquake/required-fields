@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <title>Rule: Required Fields</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -97,7 +97,13 @@
       </h3>
       <div id="failure-rule-1">
         <label for="name-failure">Name</label>
-        <input type="text" id="name-failure" placeholder="Enter your name" />
+
+        <input
+          type="text"
+          required
+          id="name-failure"
+          placeholder="Enter your name"
+        />
       </div>
 
       <br />
@@ -108,7 +114,12 @@
       </h3>
       <div id="failure-rule-2">
         <label for="email-failure">Email</label>
-        <input type="email" id="email-failure" placeholder="Enter your email" />
+        <input
+          type="email"
+          required
+          id="email-failure"
+          placeholder="Enter your email"
+        />
       </div>
 
       <br />
@@ -122,6 +133,7 @@
         <input
           type="tel"
           id="phone-failure"
+          required
           placeholder="Enter your phone number"
         />
       </div>
@@ -136,6 +148,7 @@
         <label for="password-failure">Password</label>
         <input
           type="password"
+          required
           id="password-failure"
           placeholder="Enter your password"
         />
@@ -151,6 +164,7 @@
         <label for="address-failure">Address</label>
         <input
           type="text"
+          required
           id="address-failure"
           placeholder="Enter your address"
         />
@@ -164,7 +178,7 @@
       </h3>
       <div id="failure-rule-6">
         <label for="dob-failure">Date of Birth</label>
-        <input type="date" id="dob-failure" />
+        <input type="date" required id="dob-failure" />
       </div>
     </form>
     <hr />
