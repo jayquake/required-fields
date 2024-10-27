@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Required Fields</h1>
+    <h2>Success</h2>
+    <form id="success-form">
+      <h3>Example 1: Required Name Field Group</h3>
+      <div id="success-rule-1">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          aria-required="true"
+          required
+          placeholder="Enter your name"
+        />
+      </div>
+
+      <br />
+
+      <h3>Example 2: Required Email Field Group</h3>
+      <div id="success-rule-2">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          aria-required="true"
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <br />
+
+      <h3>Example 3: Required Phone Number Field Group</h3>
+      <div id="success-rule-3">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          aria-required="true"
+          required
+          placeholder="Enter your phone number"
+        />
+      </div>
+
+      <br />
+
+      <h3>Example 4: Required Password Field Group</h3>
+      <div id="success-rule-4">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          aria-required="true"
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <br />
+
+      <h3>Example 5: Required Address Field Group</h3>
+      <div id="success-rule-5">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          id="address"
+          aria-required="true"
+          required
+          placeholder="Enter your address"
+        />
+      </div>
+
+      <br />
+
+      <h3>Example 6: Required Date of Birth Field Group</h3>
+      <div id="success-rule-6">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" aria-required="true" required />
+      </div>
+    </form>
+    <hr />
+
+    <h2>Failures</h2>
+    <form id="failure-form">
+      <h3>
+        Failure Example 1: Name Field Group Without aria-required or required
+        attribute
+      </h3>
+      <div id="failure-rule-1">
+        <label for="name-failure">Name</label>
+        <input type="text" id="name-failure" placeholder="Enter your name" />
+      </div>
+
+      <br />
+
+      <h3>
+        Failure Example 2: Email Field Group Without aria-required or required
+        attribute
+      </h3>
+      <div id="failure-rule-2">
+        <label for="email-failure">Email</label>
+        <input type="email" id="email-failure" placeholder="Enter your email" />
+      </div>
+
+      <br />
+
+      <h3>
+        Failure Example 3: Phone Number Field Group Without aria-required or
+        required attribute
+      </h3>
+      <div id="failure-rule-3">
+        <label for="phone-failure">Phone Number</label>
+        <input
+          type="tel"
+          id="phone-failure"
+          placeholder="Enter your phone number"
+        />
+      </div>
+
+      <br />
+
+      <h3>
+        Failure Example 4: Password Field Group Without aria-required or
+        required attribute
+      </h3>
+      <div id="failure-rule-4">
+        <label for="password-failure">Password</label>
+        <input
+          type="password"
+          id="password-failure"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <br />
+
+      <h3>
+        Failure Example 5: Address Field Group Without aria-required or required
+        attribute
+      </h3>
+      <div id="failure-rule-5">
+        <label for="address-failure">Address</label>
+        <input
+          type="text"
+          id="address-failure"
+          placeholder="Enter your address"
+        />
+      </div>
+
+      <br />
+
+      <h3>
+        Failure Example 6: Date of Birth Field Group Without aria-required or
+        required attribute
+      </h3>
+      <div id="failure-rule-6">
+        <label for="dob-failure">Date of Birth</label>
+        <input type="date" id="dob-failure" />
+      </div>
+    </form>
+  </body>
+</html>
