@@ -106,85 +106,55 @@
 
     <hr />
 
-    <h2>Failures</h2>
-    <form id="failure-form">
-      <h3>
-        Failure Example 1: Name Field Group Without Accessibility Attributes
-      </h3>
-      <div id="failure-rule-1">
-        <label for="name-failure">Name</label>
-        <input
-          type="text"
-          id="name-failure"
-          required
-          placeholder="Enter your name"
-        />
-      </div>
+   <h2>Failures</h2>
+<form id="failure-form">
+  
+  <h3>Failure Example 1: Name Field Group Without Accessibility Attributes</h3>
+  <div id="failure-rule-1">
+    <label for="name-failure">Name</label>
+    <input type="text" id="name-failure" required placeholder="Enter your name">
+    <div class="error-message" id="name-error">Name is required.</div>
+  </div>
+  
+  <h3>Failure Example 2: Email Field Group Without Accessibility Attributes</h3>
+  <div id="failure-rule-2">
+    <label for="email-failure">Email</label>
+    <input type="email" id="email-failure" required placeholder="Enter your email">
+    <div class="error-message" id="email-error">Email is required.</div>
+  </div>
+  
+  <h3>Failure Example 3: Phone Number Field Group Without Accessibility Attributes</h3>
+  <div id="failure-rule-3">
+    <label for="phone-failure">Phone Number</label>
+    <input type="tel" id="phone-failure" required placeholder="Enter your phone number">
+    <div class="error-message" id="phone-error">Phone number is required.</div>
+  </div>
+  
+  <h3>Failure Example 4: Password Field Group Without Accessibility Attributes</h3>
+  <div id="failure-rule-4">
+    <label for="password-failure">Password</label>
+    <input type="password" id="password-failure" required placeholder="Enter your password">
+    <div class="error-message" id="password-error">Password is required.</div>
+  </div>
+  
+  <h3>Failure Example 5: Address Field Group Without Accessibility Attributes</h3>
+  <div id="failure-rule-5">
+    <label for="address-failure">Address</label>
+    <input type="text" id="address-failure" required placeholder="Enter your address">
+    <div class="error-message" id="address-error">Address is required.</div>
+  </div>
+  
+  <h3>Failure Example 6: Date of Birth Field Group Without Accessibility Attributes</h3>
+  <div id="failure-rule-6">
+    <label for="dob-failure">Date of Birth</label>
+    <input type="date" id="dob-failure" required>
+    <div class="error-message" id="dob-error">Date of birth is required.</div>
+  </div>
 
-      <h3>
-        Failure Example 2: Email Field Group Without Accessibility Attributes
-      </h3>
-      <div id="failure-rule-2">
-        <label for="email-failure">Email</label>
-        <input
-          type="email"
-          id="email-failure"
-          required
-          placeholder="Enter your email"
-        />
-      </div>
+  <button type="submit">Submit</button>
+</form>
 
-      <h3>
-        Failure Example 3: Phone Number Field Group Without Accessibility
-        Attributes
-      </h3>
-      <div id="failure-rule-3">
-        <label for="phone-failure">Phone Number</label>
-        <input
-          type="tel"
-          id="phone-failure"
-          required
-          placeholder="Enter your phone number"
-        />
-      </div>
 
-      <h3>
-        Failure Example 4: Password Field Group Without Accessibility Attributes
-      </h3>
-      <div id="failure-rule-4">
-        <label for="password-failure">Password</label>
-        <input
-          type="password"
-          id="password-failure"
-          required
-          placeholder="Enter your password"
-        />
-      </div>
-
-      <h3>
-        Failure Example 5: Address Field Group Without Accessibility Attributes
-      </h3>
-      <div id="failure-rule-5">
-        <label for="address-failure">Address</label>
-        <input
-          type="text"
-          id="address-failure"
-          required
-          placeholder="Enter your address"
-        />
-      </div>
-
-      <h3>
-        Failure Example 6: Date of Birth Field Group Without Accessibility
-        Attributes
-      </h3>
-      <div id="failure-rule-6">
-        <label for="dob-failure">Date of Birth</label>
-        <input required type="date" id="dob-failure" required />
-      </div>
-
-      <button type="submit">Submit</button>
-    </form>
     <hr />
     <h2>Sentry.io Phone</h2>
     <main class="css-10ee0wq ee0h16j0">
@@ -267,5 +237,39 @@
           }
         });
     </script>
+    <script>
+  // JavaScript for client-side validation
+  document.getElementById("failure-form").addEventListener("submit", function(event) {
+    let isValid = true;
+
+    // List of required fields with custom validation messages
+    const fields = [
+      { id: "name-failure", errorId: "name-error" },
+      { id: "email-failure", errorId: "email-error" },
+      { id: "phone-failure", errorId: "phone-error" },
+      { id: "password-failure", errorId: "password-error" },
+      { id: "address-failure", errorId: "address-error" },
+      { id: "dob-failure", errorId: "dob-error" }
+    ];
+
+    // Loop through each field to validate
+    fields.forEach(field => {
+      const input = document.getElementById(field.id);
+      const errorMessage = document.getElementById(field.errorId);
+
+      if (!input.value.trim()) {
+        errorMessage.style.display = "block";
+        isValid = false;
+      } else {
+        errorMessage.style.display = "none";
+      }
+    });
+
+    // Prevent form submission if any field is invalid
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+</script>
   </body>
 </html>
